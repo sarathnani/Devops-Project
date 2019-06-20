@@ -1,0 +1,42 @@
+### !!! Remove this from public template !!!
+### !!! These are private values only for sunbird/ntp !!!
+instance_name: sunbird
+instance: dev
+
+############## Common ######################
+
+env: 
+proto: 
+domain_name: 
+ekstep_domain_name:
+
+#bootstrap
+ssh_public_key_deployer:  
+bootstrap_user:
+bootstrap_key_path:
+###################### LP ############################
+
+azure_public_container: 
+azure_account_name: 
+
+
+# This variable should change value per env
+# eg:
+# environment_id: "10000000" # for dev
+# environment_id: "20000000" # for staging env
+
+environment_id: 
+
+###########  jenkinspipeline upload artifact ############
+artifacts_container: 
+
+
+neo4j_zip: neo4j-enterprise-3.3.9-unix.tar.gz       # neo4j enterprise version.zip present in the artifacts folder
+neo4j_home: "{{learner_user_home}}/{{neo4j_dir}}/neo4j-enterprise-3.3.9"   # Change this path to the version of neo4j you will be using
+neo4j_enterprise: "true"
+
+## backup
+backup_azure_storage_account_name: sunbirdbackupsdev
+### overriding backup secret
+backup_azure_storage_access_key: "{{lp_vault_backup_azure_storage_secret}}"
+

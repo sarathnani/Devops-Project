@@ -1,0 +1,9 @@
+---
+- name: local
+  hosts: jenkins-backup
+  vars_files:
+    - "{{inventory_dir}}/secrets.yml"
+  roles:
+    - jenkins-backup-upload
+  tags:
+    - jenkins-backup
